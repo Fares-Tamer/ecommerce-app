@@ -15,7 +15,7 @@ export default async function middleware(req:NextRequest){ // بيجيلوا ا�
             return NextResponse.next();
         }
         else{
-            let redirectUrl = new URL( '/login' , process.env.NEXTAUTH_URL); 
+            const redirectUrl = new URL( '/login' , process.env.NEXTAUTH_URL);  
             redirectUrl.searchParams.set('callback-url',req.nextUrl.pathname);
             return NextResponse.redirect(redirectUrl)
         }
