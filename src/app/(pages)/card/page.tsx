@@ -3,8 +3,8 @@
 import { CartContext } from '@/app/_component/Context/CartContext'
 import Loading from '@/app/loading';
 import { formatCurrency } from '@/helpers/formatCurrency'
-import { CartResponse } from '@/interfaces/Cart';
-import { OnlinePayment } from '@/interfaces/onlinePayment';
+
+
 import { Loader2, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast';
 
 import CheckOut from '@/app/_component/Checkout/CheckOut';
-import { getUserToken } from '@/helpers/getUserToken/getUserToken';
+
 import { clearItemProduct, removeItemProduct, updateItemProduct } from '@/app/_action/addToCartAction';
 
 
@@ -66,7 +66,7 @@ export default function Card() {
  
 
   return <>
-  {isLoading ? <Loading/>:cartData?.numOfCartItems>0 ? <div className="container mx-auto px-4 py-6">
+  {isLoading ? <Loading/>:cartData && cartData.numOfCartItems && cartData?.numOfCartItems>0 ? <div className="container mx-auto px-4 py-6">
       <h1 className='text-3xl font-bold '>Shopping Cart</h1>
       <p className='text-muted-foreground mt-1'>{cartData?.numOfCartItems} items in your cart</p>
 
@@ -123,7 +123,7 @@ export default function Card() {
 
               <div className="flex items-center justify-between">
                 <span className='text-sm text-muted-foreground'>Subtotal {cartData?.numOfCartItems} items</span> 
-                <span className='font-semibold'>{formatCurrency(cartData?.data.totalCartPrice!)}</span>
+                <span className='font-semibold'>{formatCurrency(cartData?.data.totalCartPrice)}</span>
               </div>
 
               <div className="flex items-center justify-between">
@@ -134,7 +134,7 @@ export default function Card() {
               <div className="my-4 border-t">
                 <div className="flex items-center justify-between mt-2">
                   <span className='font-bold'>Total</span> 
-                  <span className='font-semibold'>{formatCurrency(cartData?.data.totalCartPrice!)}</span> 
+                  <span className='font-semibold'>{formatCurrency(cartData?.data.totalCartPrice)}</span> 
               </div>
 
               <CheckOut cartId={cartData?.cartId}/>

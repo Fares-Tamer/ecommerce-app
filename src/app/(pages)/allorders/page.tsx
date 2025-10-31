@@ -1,7 +1,7 @@
 "use client"
 
 import { OrderResponse } from "@/interfaces/orders";
-import { CaseLower, CreditCard, CurlyBracesIcon, CurrencyIcon, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
   Card,

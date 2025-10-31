@@ -13,7 +13,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { OnlinePayment } from '@/interfaces/onlinePayment'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { checkOut } from '@/app/_action/addToCartAction'

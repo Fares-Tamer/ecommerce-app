@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "./_component/Provider/Provider";
-import { ArrowBigUpIcon } from "lucide-react";
+// import { ArrowBigUpIcon } from "lucide-react";
 import ScrollToTopButton from "./_component/ScrollToTop/ScrollToTopButton";
 // import WishListContextProvider from "./_component/Context/WishListContext";
 
