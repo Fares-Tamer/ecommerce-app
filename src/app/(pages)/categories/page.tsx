@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 
 import Link from 'next/link';
-import { Categories } from "@/interfaces/categorirs"; 
+import type { Categories } from "@/interfaces/categorirs"; 
 export default async function Categories() {
 
 const response = await fetch("https://ecommerce.routemisr.com/api/v1/categories");
