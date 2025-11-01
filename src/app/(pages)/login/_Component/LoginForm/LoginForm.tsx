@@ -59,7 +59,7 @@ export function LoginForm() {
     if(response!.ok){
       location.href= callbackURL||'/' 
     }else{
-      setError(response?.error)
+      setError(response?.error?? "Something went wrong") 
     }
     setLoading(false);
   } 
