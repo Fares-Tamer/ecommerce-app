@@ -31,7 +31,7 @@ const schema = z.object({
   path: ["rePassword"],
   message: "Passwords do not match",
 });
-
+type RegisterFormData = z.infer<typeof schema>; 
 export default function Register() {
   const [loding, setLoding] = useState(false);
   const [apiError, setApiError] = useState("");
@@ -45,7 +45,7 @@ export default function Register() {
     mode: "onBlur",
   });
 
-  async function signUp(data) {
+  async function signUp(data : RegisterFormData) { 
     try {
       setLoding(true);
       setApiError("");
