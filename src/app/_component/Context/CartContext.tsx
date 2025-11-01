@@ -34,8 +34,8 @@ export default function CartContextProvider({children}:{children:ReactNode}) {
         const data :CartResponse = await response.json(); 
         
         setCartData(data);
-        if(cartData?.data.cartOwner){
-            localStorage.setItem("userId",cartData?.data.cartOwner); 
+        if(data?.data.cartOwner){ 
+            localStorage.setItem("userId",data.data.cartOwner);  
         }
         setIsLoading(false);
         console.log(data);
