@@ -32,6 +32,10 @@ export default function CartContextProvider({children}:{children:ReactNode}) {
         if(session.status == 'authenticated'){
         const response = await fetch("/api/get-cart") 
         const data :CartResponse = await response.json(); 
+        if(!data?.data){
+            console.warn("No cart data returned from API:",data);
+            return;
+        }
         
         setCartData(data);
         if(data?.data.cartOwner){ 
