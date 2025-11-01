@@ -41,9 +41,9 @@ export default function FooterCart({productId}:{productId:string}) {
         const data = wishlist?.data;
         if(!data)return false;
         if(data.length>0 && typeof data[0] === "string"){
-            return (data as known as string[]).some(id => id=== productId);
+            return (data as unknown as string[]).some(id => id=== productId);
         }
-        return (data as known as any[]).some(item =>{
+        return (data as unknown as any[]).some(item =>{ 
             if(!item)return false;
             return item.id === productId || item._id === productId;
         })

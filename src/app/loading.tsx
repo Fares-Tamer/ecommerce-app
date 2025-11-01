@@ -1,4 +1,4 @@
-import { Loader2, SplinePointerIcon } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import React from 'react'
 
 export default function Loading() {
@@ -9,3 +9,5 @@ export default function Loading() {
   </div>
   </>
 }
+
+
