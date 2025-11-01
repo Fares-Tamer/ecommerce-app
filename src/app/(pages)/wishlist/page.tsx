@@ -28,7 +28,7 @@ export default function WishlistPage() {
   if(!wishlist||wishlist.count===0) return<div className='flex items-center justify-center w-full h-160'><p className=' text-center text-3xl font-semibold'>No Product in Wishlist Now..</p></div>
   return <>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-2 sm:p-0">
-    {wishlist.data.map((product)=>
+    {wishlist?.data?.map((product)=>
   <div key={product.id}>
     
      
